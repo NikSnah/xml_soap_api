@@ -1,0 +1,238 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:mstns="http://www.opentravel.org/OTA/2003/05" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="Source">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RequestorID" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="Type" form="unqualified" type="xs:string" />
+            <xs:attribute name="ID" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BookingChannel" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompanyName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Address" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StreetNmbr" type="xs:string" minOccurs="0" />
+              <xs:element name="CityName" type="xs:string" minOccurs="0" />
+              <xs:element name="PostalCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StateProv" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Calculation">
+    <xs:complexType>
+      <xs:attribute name="UnitCharge" form="unqualified" type="xs:string" />
+      <xs:attribute name="UnitName" form="unqualified" type="xs:string" />
+      <xs:attribute name="Quantity" form="unqualified" type="xs:string" />
+      <xs:attribute name="Total" form="unqualified" type="xs:string" />
+      <xs:attribute name="Percentage" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTA_VehResNotifRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="POS" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="Source" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reservations" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reservation" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProcessingInfo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Action" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BookingSource" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="Source" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="VehReservation" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Customer" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Primary" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Email" type="xs:string" minOccurs="0" />
+                                      <xs:element name="PersonName" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="GivenName" type="xs:string" minOccurs="0" />
+                                            <xs:element name="Surname" type="xs:string" minOccurs="0" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Telephone" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="PhoneNumber" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="VehSegmentCore" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ConfID" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="Type" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="ID" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Vendor" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:simpleContent msdata:ColumnName="Vendor_Text" msdata:Ordinal="3">
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="CompanyShortName" form="unqualified" type="xs:string" />
+                                        <xs:attribute name="TravelSector" form="unqualified" type="xs:string" />
+                                        <xs:attribute name="Code" form="unqualified" type="xs:string" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="VehRentalCore" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="PickUpLocation" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="LocationCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="CodeContext" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ReturnLocation" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="LocationCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="CodeContext" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="PickUpDateTime" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="ReturnDateTime" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Vehicle" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="Code" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="CodeContext" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="RentalRate" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="RateDistance" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="Unlimited" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="DistUnitName" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="VehiclePeriodUnitName" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="VehicleCharges" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="VehicleCharge" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="Calculation" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="CurrencyCode" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="Amount" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="Description" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="IncludedInEstTotalInd" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="Purpose" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="RateQualifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="RateCategory" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="PromotionCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="RateQualifier" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="RatePeriod" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Fees" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Fee" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="Calculation" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                          <xs:attribute name="CurrencyCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="Amount" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="Description" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="IncludedInEstTotalInd" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="Purpose" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="TotalCharge" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="RateTotalAmount" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="EstimatedTotalAmount" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="CurrencyCode" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="CreateDateTime" form="unqualified" type="xs:string" />
+                        <xs:attribute name="LastModifyDateTime" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Quantity" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="TimeStamp" form="unqualified" type="xs:string" />
+      <xs:attribute name="Target" form="unqualified" type="xs:string" />
+      <xs:attribute name="Version" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Source" />
+        <xs:element ref="Calculation" />
+        <xs:element ref="OTA_VehResNotifRQ" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
