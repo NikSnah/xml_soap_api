@@ -1,0 +1,92 @@
+Secret id group: 
+Set UserSecretsId to '2a3e0030-08f4-4abc-a557-6150bf4e0515' for MSBuild project '/Users/nikita_snahovskyy/Desktop/xml-web-api/api/api.csproj'.
+
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=23.254.164.202,7102;Database=bkivDb001;User Id=sa;Password=PSnnAYR62zyRkfu2w;Trusted_Connection=False;Encrypt=False;TrustServerCertificate=True;"
+
+
+dotnet ef database update
+
+
+
+
+
+// Display the DataTable content for test purposes 
+foreach (DataRow dataRow in OTAReservations.Rows)
+{
+    Console.WriteLine($"bookingReference: {dataRow["bookingReference"]}");
+    Console.WriteLine($"firstName: {dataRow["firstName"]}");
+    Console.WriteLine($"lastName: {dataRow["lastName"]}");
+    Console.WriteLine($"phone: {dataRow["phone"]}");
+    Console.WriteLine($"email: {dataRow["email"]}");
+    Console.WriteLine($"pickUpLocation: {dataRow["pickUpLocation"]}");
+    Console.WriteLine($"dropOffLocation: {dataRow["dropOffLocation"]}");
+    Console.WriteLine($"pickUpDate: {dataRow["pickUpDate"]}");
+    Console.WriteLine($"dropOffDate: {dataRow["dropOffDate"]}");
+    Console.WriteLine($"vehicle: {dataRow["vehicle"]}");
+    Console.WriteLine($"totalCharge: {dataRow["totalCharge"]}");
+}
+
+
+
+migrationBuilder.CreateTable(
+                name: "to_Bookings",
+                columns: table => new
+                {
+                    book_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    fam_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    address_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    address_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CityID = table.Column<int>(type: "int", nullable: true),
+                    pcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StateProvinceID = table.Column<int>(type: "int", nullable: true),
+                    CountryID = table.Column<int>(type: "int", nullable: true),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cp_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cell_phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DL_number = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DL_province = table.Column<int>(type: "int", nullable: true),
+                    DL_country = table.Column<int>(type: "int", nullable: true),
+                    DL_dt_expiry = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    birth_year = table.Column<int>(type: "int", nullable: true),
+                    cdw_type = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cdw_desc = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cdw_policy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cdw_province = table.Column<int>(type: "int", nullable: true),
+                    cdw_expiry = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    cdw_addinfo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Renter2_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Renter2_Relation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Renter2_DL_number = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Renter2_DL_dt_expiry = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Renter2_DL_province = table.Column<int>(type: "int", nullable: true),
+                    Renter2_DL_country = table.Column<int>(type: "int", nullable: true),
+                    Renter2_birth_year = table.Column<int>(type: "int", nullable: true),
+                    car_class = table.Column<int>(type: "int", nullable: true),
+                    location_id = table.Column<int>(type: "int", nullable: true),
+                    location_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    location_comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    location2_id = table.Column<int>(type: "int", nullable: true),
+                    location2_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    location2_comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    bk_comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    pickup_offsite = table.Column<bool>(type: "bit", nullable: true),
+                    dropoff_offsite = table.Column<bool>(type: "bit", nullable: true),
+                    tdt_car_out = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    tdt_car_in = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    rental_days = table.Column<int>(type: "int", nullable: true),
+                    total_hst = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    total_charge = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    booksource_id = table.Column<int>(type: "int", nullable: true),
+                    bookref = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    paid_amount = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    flight_no = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    dob_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    dob_date_2 = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    imgs_verified = table.Column<bool>(type: "bit", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_to_Bookings", x => x.book_id);
+                });

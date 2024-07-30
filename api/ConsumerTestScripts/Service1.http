@@ -1,0 +1,124 @@
+#uses httpyac extension
+GET http://localhost:5175/OTA_Res
+
+POST http://localhost:5175/OTA_Res
+
+
+POST http://localhost:5175/OTA_Res
+Content-Type: text/json
+{
+    Hello: "ssdsds"
+}
+POST http://23.254.164.202:8080/OTA_Res
+
+
+POST http://localhost:5175/OTA_Res
+Content-Type: text/xml
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SOAP:Body>
+    </SOAP-ENV:Body>
+</SOAP:Envelope>
+
+POST http://23.254.164.202:8081/
+
+POST http://localhost:8081/OTA_Res
+
+#uses httpyac extension
+POST http://23.254.164.202:8081/OTA_Res
+Content-Type: text/xml
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SOAP-ENV:Body>
+        <OTA_VehResNotifRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TimeStamp="2024-07-01T00:33:30.0645022-04:00" Target="Production" Version="1.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+            <POS>
+                <Source>
+                    <RequestorID Type="22" ID="Ace" /> 
+                </Source>
+            </POS>
+            <Reservations Quantity="1">
+            <Reservation>
+                <ProcessingInfo Action="Cancel" />
+                <BookingSource>
+                    <Source>
+                    <RequestorID Type="5" ID="11617270" />
+                    <BookingChannel>
+                        <CompanyName>EXPEDIA INC</CompanyName>
+                    </BookingChannel>
+                    <Address>
+                        <StreetNmbr>333 108TH AVE NE</StreetNmbr>
+                        <CityName>BELLEVUE</CityName>
+                        <PostalCode>98004</PostalCode>
+                        <StateProv>WA</StateProv>
+                    </Address>
+                    </Source>
+                </BookingSource>
+
+                <VehReservation CreateDateTime="2024-07-01T00:33:09.717" LastModifyDateTime="2024-07-01T00:33:09.717">
+                    <Customer> 
+                        <Primary>
+                            <PersonName>
+                                <GivenName>SampleModify</GivenName>
+                                <Surname>SampleModify</Surname>
+                            </PersonName>
+                            <Telephone PhoneNumber="18121231234" />
+                            <Email>jdoe@gmail.com</Email>
+                        </Primary>
+                    </Customer>
+                    <VehSegmentCore>
+                        <ConfID Type="14" ID="PLS1231231" /> 
+                        <Vendor CompanyShortName="ACE" TravelSector="2" Code="AC">ACE Rent A Car</Vendor> 
+
+                        <VehRentalCore PickUpDateTime="2024-07-03T21:30:00" ReturnDateTime="2024-07-07T14:00:00">
+                            <PickUpLocation LocationCode="YYZO02" CodeContext="AC" /> 
+                            <ReturnLocation LocationCode="YYZO02" CodeContext="AC" />
+                        </VehRentalCore>
+                    <Vehicle Code="EGAR" CodeContext="SIPP" /> 
+                    <RentalRate>
+                        <RateDistance Unlimited="true" DistUnitName="Mile" VehiclePeriodUnitName="RentalPeriod" />
+                        <VehicleCharges>
+                            <VehicleCharge CurrencyCode="USD" Amount="302.72" Description="Daily Rate" IncludedInEstTotalInd="true" Purpose="1"> 
+                                <Calculation UnitCharge="75.68" UnitName="Day" Quantity="4" Total="302.72" />
+                                <Calculation UnitCharge="12.61" UnitName="ExtraHour" Quantity="0" Total="0.00" />
+                            </VehicleCharge>
+                            <VehicleCharge CurrencyCode="USD" Amount="999.99"  Description="Fallback Daily" IncludedInEstTotalInd="false" Purpose="10" />
+                            <VehicleCharge CurrencyCode="USD" Amount="25.22" Description="Fallback Hourly" IncludedInEstTotalInd="false" Purpose="11" />
+                        </VehicleCharges>
+                        <RateQualifier RateCategory="16" PromotionCode="ABCPromo" RateQualifier="CUG" RatePeriod="Daily" />
+                    </RentalRate>
+
+                    <Fees>
+                        <Fee CurrencyCode="USD" Amount="0.00" Description="Percentage Discount" IncludedInEstTotalInd="true" Purpose="3">
+                            <Calculation UnitCharge="302.72" Percentage="0.0" Total="0.00" />
+                        </Fee>
+
+                        <Fee CurrencyCode="USD" Amount="19.96" Description="Rental Site Facility Fee" IncludedInEstTotalInd="true" Purpose="6">
+                            <Calculation UnitCharge="4.99" UnitName="Day" Quantity="4" Total="19.96" />
+                        </Fee>
+
+                        <Fee CurrencyCode="USD" Amount="35.85" Description="Concession Recovery Fee" IncludedInEstTotalInd="true" Purpose="6">
+                            <Calculation UnitCharge="322.68" Percentage="11.11" Total="35.85" />
+                        </Fee>
+
+                        <Fee CurrencyCode="USD" Amount="32.98" Description="MN Car Rental Tax" IncludedInEstTotalInd="true" Purpose="7">
+                            <Calculation UnitCharge="358.53" Percentage="9.2" Total="32.98" />
+                        </Fee>
+
+                        <Fee CurrencyCode="USD" Amount="17.93" Description="MN Registration Fee" IncludedInEstTotalInd="true" Purpose="6">
+                            <Calculation UnitCharge="358.53" Percentage="5.0" Total="17.93" />
+                        </Fee>
+
+                        <Fee CurrencyCode="USD" Amount="32.36" Description="Sales Tax" IncludedInEstTotalInd="true" Purpose="7">
+                            <Calculation UnitCharge="358.53" Percentage="9.025" Total="32.36" />
+                        </Fee>
+
+                    </Fees>
+
+                    <TotalCharge RateTotalAmount="302.72" EstimatedTotalAmount="441.80" CurrencyCode="USD" />
+                    </VehSegmentCore>
+                </VehReservation>
+            </Reservation>
+        </Reservations>
+    </OTA_VehResNotifRQ>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

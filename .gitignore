@@ -1,0 +1,86 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# User-specific files
+*.userprefs
+*.suo
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+
+# Visual Studio files
+.vs/
+*.sln
+*.suo
+*.csproj
+*.csproj.user
+*.config
+*.bak
+
+# Rider files
+.idea/
+*.sln.iml
+*.ipr
+*.iws
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# GhostDoc plugin setting file
+*.GhostDoc.xml
+
+# StyleCop
+StyleCopReport.xml
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject file
+**/*.DocProject
+
+# TeamCity
+_TeamCity*
+
+# DotCover
+*.dotCover
+
+# AxoCover
+.axoCover/*
+!.axoCover/settings.json
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# Build folder
+build/
+
+# End of Visual Studio gitignore
